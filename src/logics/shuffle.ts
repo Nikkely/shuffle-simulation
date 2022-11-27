@@ -57,7 +57,7 @@ export function ShotgunShuffle(decks: number) {
 
 export function FarrowShuffle(array: any[]): ShuffledType[] {
     const n = array.length
-    const halfN = Math.trunc(n/2)
+    const halfN = Math.ceil(n/2)
 
     return array.map((v, i) => {
         if (i < halfN) {
