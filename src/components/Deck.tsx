@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 import './Deck.css'
 import Card from './Card'
 import { HinduShuffle, ShotgunShuffle, FarrowShuffle, ShuffledType } from '../logics/shuffle'
@@ -36,9 +38,11 @@ function Deck(props: DeckProps) {
     }
     return (
         <div className="Deck">
-            <button onClick={reflect(HinduShuffle)}>hindu</button>
-            <button onClick={reflect(ShotgunShuffle(7))}>shotgun(7)</button>
-            <button onClick={reflect(FarrowShuffle)}>farrow</button>
+            <ButtonGroup variant="contained" aria-label="shuffle pattern">
+                <Button variant="outlined" onClick={reflect(HinduShuffle)}>hindu</Button>
+                <Button variant="outlined" onClick={reflect(ShotgunShuffle(7))}>shotgun(7)</Button>
+                <Button variant="outlined" onClick={reflect(FarrowShuffle)}>farrow</Button>
+            </ButtonGroup>
             <div style={{
                 margin: "10px",
             }}>
@@ -47,12 +51,11 @@ function Deck(props: DeckProps) {
                         return (<Card
                             key={c.key}
                             x={c.x * 10}
-                            // y={100}
                             color={c.color}
                         />)
                     })
                 }</div>
-        </div>
+        </div >
     );
 }
 

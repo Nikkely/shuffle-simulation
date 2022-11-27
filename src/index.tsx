@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './components/App';
+import Header from './components/Header';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <header><h1>shuffle-simulation</h1></header>
+    <Header/>
     <App></App>
   </React.StrictMode>
 );

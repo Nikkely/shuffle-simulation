@@ -2,7 +2,6 @@ import { motion } from "framer-motion"
 
 type CardProps = {
     x: number
-    // y: number
     color: string
 }
 
@@ -17,7 +16,6 @@ function Card(props: CardProps) {
             }}
             animate={{
                 x: props.x,
-                // y: props.y
             }}
             transition={{
                 duration: 2
