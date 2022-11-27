@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import './Deck.css'
@@ -40,6 +41,9 @@ function Deck(props: DeckProps) {
     }
     return (
         <div className="Deck">
+            <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                DeckNum: {props.num}
+            </Typography>
             <ButtonGroup variant="contained" aria-label="shuffle pattern">
                 <Button variant="outlined" onClick={reflect("Hindu", HinduShuffle)}>hindu</Button>
                 <Button variant="outlined" onClick={reflect("Shotgun", ShotgunShuffle(7))}>shotgun(7)</Button>
@@ -58,9 +62,9 @@ function Deck(props: DeckProps) {
                         />)
                     })
                 }</div>
-            <p> 
+            <Typography sx={{ fontSize: 14 }}>
                 {displayHistory(history)}
-            </p>
+            </Typography>
         </div >
     );
 }
@@ -96,7 +100,7 @@ function displayHistory(history: string[]): string {
         }
         counter++
     }
-    work.push(history[history.length-1] + " x" + String(counter))
+    work.push(history[history.length - 1] + " x" + String(counter))
     return work.join(" > ")
 }
 
