@@ -1,13 +1,14 @@
-
 export type ShuffledType = {
     old: number
     new: number
 }
 
 export function HinduShuffle(array: any[]): ShuffledType[] {
+    const HINDU_MIN_UPPER = 5
+    const HINDU_MIN_LOWER = 5
     const n = array.length
-    const upper = getRandomInt(n - 1)
-    const lower = getRandomInt(upper)
+    const upper = getRandomInt(HINDU_MIN_UPPER, n - 1)
+    const lower = getRandomInt(HINDU_MIN_LOWER, upper)
     const num = upper - lower + 1
 
     return array.map((v, i) => {
@@ -73,6 +74,6 @@ export function FarrowShuffle(array: any[]): ShuffledType[] {
     })
 }
 
-function getRandomInt(max: number) {
-    return Math.trunc(Math.random() * max);
+function getRandomInt(min: number, max: number) {
+    return Math.trunc(min + Math.random() * (max - min));
 }
