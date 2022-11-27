@@ -16,10 +16,9 @@ function App() {
             {
                 decks.map((d, i) => {
                     return (
-                        <Card sx={{ minWidth: 300, m: 3 }} variant="outlined">
+                        <Card sx={{ minWidth: 300, m: 3 }} variant="outlined" key={i}>
                             <CardContent>
                                 <Deck
-                                    key={i}
                                     num={d}
                                 />
                             </CardContent>
